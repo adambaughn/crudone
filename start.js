@@ -5,20 +5,22 @@ const PORT = process.env.PORT || 5000;
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,    
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
 mongoose.connection
   .on('open', () => {
-    console.log('Mongoose connection open');
+    alert('Mongoose connection open');
   })
   .on('error', (err) => {
-    console.log(`Connection error: ${err.message}`);
+    alert(`Connection error: ${err.message}`);
   });
 
 require('./models/Registration');
 const app = require('./app');
 
 const server = app.listen(PORT, () => {
-  console.log(`Express is running on port ${server.address().port}`);
+  alert(`Express is running on port ${server.address().port}`);
 });
