@@ -29,10 +29,10 @@ router.post('/',
     if (errors.isEmpty()) {
       const registration = new Registration(req.body);
       registration.save()
-        .then(() => { res.send('Thank you for your registration!'); })
+        .then(() => { res.send('Your information has been registered.'); })
         .catch((err) => {
           console.log(err);
-          res.send('Sorry! Something went wrong.');
+          res.send('There was an error. Your information was not registered');
         });
     } else {
       res.render('form', {
@@ -50,7 +50,7 @@ router.get('/registrations', basic.check((req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.send('Sorry! Something went wrong.');
+      res.send('There was an error. The query was not executed.');
     });
 }));
 
