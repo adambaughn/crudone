@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon ./start.js"
+    "start": "node start.js"
   },
   "keywords": [],
   "author": "",
