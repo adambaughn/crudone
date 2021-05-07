@@ -17,10 +17,10 @@ router.get('/', (req, res) => {
 router.post('/',
   [
     check('name')
-      .isLength({ min: 1 })
+      .isLength({ min: 2 })
       .withMessage('Please enter a name'),
     check('email')
-      .isLength({ min: 1 })
+      .isLength({ min: 8 })
       .withMessage('Please enter an email'),
   ],
   (req, res) => {
