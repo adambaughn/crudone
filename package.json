@@ -1,5 +1,5 @@
 {
-  "name": "npm-demo-app",
+  "name": "crudone",
   "version": "1.0.1",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,5 @@
   "devDependencies": {
     "nodemon": "^2.0.7"
   },
-  "description": ""
+  "description": "Created for web215 by Adam Baughn"
 }
