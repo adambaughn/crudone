@@ -6,7 +6,8 @@ const PORT = process.env.PORT || 5000;
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,    
-
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
 mongoose.connection
