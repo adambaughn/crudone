@@ -28,6 +28,7 @@ router.post('/',
 
     if (errors.isEmpty()) {
       const registration = new Registration(req.body);
+      alert('Your information was entered into the database');
       registration.save()
       //  .then(() => { res.send('Your information has been registered.'); })
         .then(() => { res.redirect('back'); })
