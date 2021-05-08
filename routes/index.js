@@ -29,7 +29,8 @@ router.post('/',
     if (errors.isEmpty()) {
       const registration = new Registration(req.body);
       registration.save()
-        .then(() => { res.send('Your information has been registered.'); })
+      //  .then(() => { res.send('Your information has been registered.'); })
+        .then(() => { res.redirect('back'); })
         .catch((err) => {
           console.log(err);
           res.send('There was an error. Your information was not registered'); 
