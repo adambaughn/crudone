@@ -30,7 +30,7 @@ router.post('/',
       const registration = new Registration(req.body);
       registration.save()
       //  .then(() => { res.send('Your information has been registered.'); })
-        .then(() => { alert('Your information has been registered')})
+        .then(() => { alert('Your information has been registered'); })
         .then(() => { res.redirect('back'); })
         .catch((err) => {
           console.log(err);
