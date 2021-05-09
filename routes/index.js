@@ -60,5 +60,26 @@ router.post('/',
       });
   });
 
+router.delete("/delete", (req, res) => {
+    Registration.findOneAndDelete({ _id: new mongoose.Types.ObjectId(req.query.id) }, (err, Registration) => {
+        if (!err) {
+            res.json({ msg: "Registration deleted", deleted: Registration });
+        } else {
+            console.log("Error removing :" + err);
+        }
+    });
+});
 
 module.exports = router;
+
+
+
+/* router.delete("/delete", (req, res) => {
+    Registration.findOneAndDelete({ _id: new mongoose.Types.ObjectId(req.query.id) }, (err, Registration) => {
+        if (!err) {
+            res.json({ msg: "Registration deleted", deleted: Registration });
+        } else {
+            console.log("Error removing :" + err);
+        }
+    });
+}); */
