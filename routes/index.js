@@ -10,6 +10,20 @@ const basic = auth.basic({
   file: path.join(__dirname, '../users.htpasswd'),
 });
 
+// router.get('/', basic.check((req, res) => {
+ router.get('/registrations', basic.check((req, res) => {
+
+  Registration.find().exec()
+    .then((registrations) => {
+      res.render('index', { title: 'Listing registrations', registrations });
+    // res.render('index', registrations:docs });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send('There was an error. The query was not executed.');
+    });
+}));
+
 router.get('/', (req, res) => {
   res.render('form', { title: 'Registration form' });
 });
@@ -28,11 +42,11 @@ router.post('/',
     if (errors.isEmpty()) {
       const registration = new Registration(req.body);
       registration.save()
-      .then(() => { res.render('index', { title: 'Listing Registrations' }); })
+      // .then(() => { res.render('index', { title: 'Listing Registrations' }); })
       // .then(() => { res.send('Thank you for your registration!'); })
       //  .then(() => { res.render('form', { title: 'Registration form' }); })
       //  .then(() => { res.send(form); })
-      //  .then(() => { res.redirect('/'); })
+        .then(() => { res.redirect('/'); })
       //  .then(() => { console.log('Your information has been registered '); })
         .catch((err) => {
           console.log(err);
@@ -47,18 +61,5 @@ router.post('/',
     }
   });
 
-// router.get('/', basic.check((req, res) => {
- router.get('/registrations', basic.check((req, res) => {
-
-  Registration.find().exec()
-    .then((registrations) => {
-      res.render('index', { title: 'Listing registrations', registrations });
-    // res.render('index', registrations:docs });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.send('There was an error. The query was not executed.');
-    });
-}));
 
 module.exports = router;
