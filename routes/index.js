@@ -55,7 +55,7 @@ router.post('/',
         res.render('index', { title: 'Listing registrations', 'registrations': registrations });
       // res.render('index', registrations:docs });
       })
-      .catch((err) => {
+      .catch(() => {
         res.send('There was an error. The query was not executed.');
       });
   });
