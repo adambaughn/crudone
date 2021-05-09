@@ -8,6 +8,7 @@ mongoose.connect(uri, {
   useUnifiedTopology: true,    
   useCreateIndex: true,
   useFindAndModify: true,
+  dbName: registrations, 
 });
 
 mongoose.connection
