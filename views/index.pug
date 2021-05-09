@@ -7,9 +7,9 @@ block content
       tr
         th Name
         th Email
-      each registration in registrations
+      each registration in registrations[0].data
         tr
-          td= registration.name
-          td= registration.email
+          td #{registration.name}
+          td #{registration.email}
   else
     p No registrations yet :(
