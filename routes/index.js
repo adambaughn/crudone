@@ -52,7 +52,7 @@ router.post('/',
   // router.get('/registrations', basic.check((req, res) => {
   router.get('/index', (req, res) => {
     Registration.find()
-      .then((registrations) => {
+      toArray().then((registrations) => {
         res.render('index', { title: 'Listing registrations', registrations });
       // res.render('index', registrations:docs });
       })
