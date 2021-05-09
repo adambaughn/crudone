@@ -36,7 +36,6 @@ router.post('/',
         .then(() => { res.redirect('/'); })
       //  .then(() => { console.log('Your information has been registered '); })
         .catch((err) => {
-          console.log(err);
           res.send('There was an error. Your information was not registered'); 
         });
     } else {
@@ -50,14 +49,13 @@ router.post('/',
 
   // router.get('/', basic.check((req, res) => {
   // router.get('/registrations', basic.check((req, res) => {
-  router.get('/index', (req, res) => {
+  router.get('/registrations', (req, res) => {
     Registration.find()
       toArray().then((registrations) => {
-        res.render('index', { title: 'Listing registrations', registrations });
+        res.render('index', { title: 'Listing registrations', 'registrations': registrations });
       // res.render('index', registrations:docs });
       })
       .catch((err) => {
-        console.log(err);
         res.send('There was an error. The query was not executed.');
       });
   });
