@@ -35,7 +35,7 @@ router.post('/',
       //  .then(() => { res.send(form); })
         .then(() => { res.redirect('/'); })
       //  .then(() => { console.log('Your information has been registered '); })
-        .catch((err) => {
+        .catch(() => {
           res.send('There was an error. Your information was not registered'); 
         });
     } else {
