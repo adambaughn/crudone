@@ -48,7 +48,7 @@ router.post('/',
 // router.get('/', basic.check((req, res) => {
  router.get('/registrations', basic.check((req, res) => {
 
-  Registration.find()
+  Registration.find().exec()
     .then(() => {
       res.render('index', { title: 'Listing registrations', registrations });
     // res.render('index', registrations:docs });
