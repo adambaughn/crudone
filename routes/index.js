@@ -11,8 +11,8 @@ const basic = auth.basic({
 });
 
 // router.get('/', basic.check((req, res) => {
- router.get('/registrations', basic.check((req, res) => {
-
+// router.get('/registrations', basic.check((req, res) => {
+ router.get('/registrations', ((req, res) => {
   Registration.find().exec()
     .then((registrations) => {
       res.render('index', { title: 'Listing registrations', registrations });
