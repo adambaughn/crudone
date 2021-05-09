@@ -58,3 +58,7 @@ body {
   .listing-table th:first-child {
     border-right: 1px solid #666;
   }
+  .testp {
+    margin-top: 40%;
+    color: #000048;  
+  }
