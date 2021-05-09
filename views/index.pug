@@ -2,7 +2,7 @@ extends layout
 
 block content
   .script 
-    if registrations.length
+    if (registrations.length) {
       table.listing-table.table-dark.table-striped
         tr
           th Name
@@ -11,5 +11,6 @@ block content
           tr
             td= registration.name
             td= registration.email
-    else
+    } else {
       p No registrations yet :(
+    }
