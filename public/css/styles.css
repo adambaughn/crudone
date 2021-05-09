@@ -1,6 +1,6 @@
 body {
     padding: 40px 10px;
-    background-color: #eee;
+    background-color: #ADD8E6;
   }
   .listing-reg h1 {
     text-align: center;
@@ -61,4 +61,7 @@ body {
   #welcome_text {
     text-align: center;
     color: #000048;  
+  }
+  #main_heading_text {
+    color: #000048; 
   }
