@@ -30,7 +30,7 @@ router.post('/',
       const registration = new Registration(req.body);
       registration.save()
       //  .then(() => { res.send('Your information has been registered.'); })
-        .then(() => { res.redirect('form'); })
+        .then(() => { res.redirect('/'); })
       //  .then(() => { console.log('Your information has been registered '); })
         .catch((err) => {
           console.log(err);
@@ -48,7 +48,8 @@ router.post('/',
 router.get('/registrations', basic.check((req, res) => {
   Registration.find()
     .then((registrations) => {
-      res.render('index', { title: 'Listing registrations', registrations });
+    //  res.render('index', { title: 'Listing registrations', registrations });
+    res.render('index', registrations:docs });
     })
     .catch((err) => {
       console.log(err);
