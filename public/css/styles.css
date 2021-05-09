@@ -58,7 +58,7 @@ body {
   .listing-table th:first-child {
     border-right: 1px solid #666;
   }
-  #welcome_text {
+ .welcome_text {
     text-align: center;
     color: #000048;  
   }
