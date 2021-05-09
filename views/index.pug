@@ -2,16 +2,4 @@ extends layout
 
 block content
 
-  p testing index
-
-  if registrations.length
-    table.listing-table.table-dark.table-striped
-      tr
-        th Name
-        th Email
-      each registration in registrations
-        tr
-          td= registration.name
-          td= registration.email
-  else
-    p No users have registered yet.
+  p testing last block
