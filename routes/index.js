@@ -25,8 +25,8 @@ router.post('/',
   ],
   (req, res) => {
     const errors = validationResult(req);
-    const registration = new Registration(req.body);
     if (errors.isEmpty()) {
+      const registration = new Registration(req.body);
       registration.save()
       .then(() => { res.render('form', { title: 'Registration form' }); })
       //  .then(() => { res.send(form); })
