@@ -10,20 +10,6 @@ const basic = auth.basic({
   file: path.join(__dirname, '../users.htpasswd'),
 });
 
-// router.get('/', basic.check((req, res) => {
-// router.get('/registrations', basic.check((req, res) => {
-
-  router.get('/registrations', (req, res) => {
-    Registration.find().exec()
-      .then((registrations) => {
-        res.render('index', { title: 'Listing registrations', registrations });
-      // res.render('index', registrations:docs });
-      })
-      .catch((err) => {
-        console.log(err);
-        res.send('There was an error. The query was not executed.');
-      });
-  });
 
 router.get('/', (req, res) => {
   res.render('form', { title: 'Registration form' });
@@ -60,6 +46,20 @@ router.post('/',
         data: req.body,
       });
     }
+  });
+
+  // router.get('/', basic.check((req, res) => {
+  // router.get('/registrations', basic.check((req, res) => {
+  router.get('/registrations', (req, res) => {
+    Registration.find()
+      .then((registrations) => {
+        res.render('index', { title: 'Listing registrations', registrations });
+      // res.render('index', registrations:docs });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.send('There was an error. The query was not executed.');
+      });
   });
 
 
