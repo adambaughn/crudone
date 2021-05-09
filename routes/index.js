@@ -31,7 +31,7 @@ router.post('/',
       registration.save()
       //  .then(() => { res.send('Your information has been registered.'); })
       //  .then(() => { res.redirect('back'); })
-        .then(() => { console.log('Your information has been registered '); })
+      //  .then(() => { console.log('Your information has been registered '); })
         .catch((err) => {
           console.log(err);
           res.send('There was an error. Your information was not registered'); 
