@@ -1,16 +1,13 @@
 extends layout
 
 block content
-  script.
-    -data = data || {}
+  -data = data || {}
 
-    if errors
-      ul.my-errors
-        for error in errors
-          li= error.msg
+  if errors
+    ul.my-errors
+      for error in errors
+        li= error.msg
   
-
-
   form(action="." method="POST" class="form-registration")
     label(for="name") Name:
     input(
