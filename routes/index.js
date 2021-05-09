@@ -49,7 +49,7 @@ router.post('/',
  router.get('/registrations', basic.check((req, res) => {
 
   Registration.find()
-    .then((registrations) => {
+    .then(() => {
       res.render('index', { title: 'Listing registrations', registrations });
     // res.render('index', registrations:docs });
     })
