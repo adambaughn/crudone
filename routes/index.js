@@ -46,10 +46,10 @@ router.post('/',
   });
 
 router.get('/registrations', basic.check((req, res) => {
-  Registration.find(err, docs)
+  Registration.find()
     .then((registrations) => {
-    //  res.render('index', { title: 'Listing registrations', registrations });
-    res.render('index', registrations:docs });
+      res.render('index', { title: 'Listing registrations', registrations });
+    // res.render('index', registrations:docs });
     })
     .catch((err) => {
       console.log(err);
