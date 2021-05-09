@@ -8,7 +8,7 @@ mongoose.connect(uri, {
   useUnifiedTopology: true,    
   useCreateIndex: true,
   useFindAndModify: true,
-  dbName: myFirstDatabase, 
+  dbName: "myFirstDatabase"
 });
 
 mongoose.connection
