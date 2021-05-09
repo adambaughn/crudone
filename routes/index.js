@@ -51,7 +51,6 @@ router.post('/',
  const registration = new Registration(req.body);
   Registration.find()
     .then((registrations) => {
-      res.send(registrations);
       res.render('index', { title: 'Listing registrations', registrations });
     // res.render('index', registrations:docs });
     })
