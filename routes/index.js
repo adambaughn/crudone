@@ -25,7 +25,7 @@ router.post('/',
   ],
   (req, res) => {
     const errors = validationResult(req);
-
+    const registration = new Registration(req.body);
     if (errors.isEmpty()) {
       registration.save()
       .then(() => { res.render('form', { title: 'Registration form' }); })
@@ -47,7 +47,7 @@ router.post('/',
 
 // router.get('/', basic.check((req, res) => {
  router.get('/registrations', basic.check((req, res) => {
- const registration = new Registration(req.body);
+
   Registration.find()
     .then((registrations) => {
       res.render('index', { title: 'Listing registrations', registrations });
