@@ -60,7 +60,7 @@ router.post('/',
       });
   });
 
-router.delete("/delete", (req, res) => {
+router.delete("/registrations", (req, res) => {
     Registration.findOneAndDelete({ _id: new mongoose.Types.ObjectId(req.query.id) }, (err, Registration) => {
         if (!err) {
             res.json({ msg: "Registration deleted", deleted: Registration });
